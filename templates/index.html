@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+        <title>David Piedra | Portfolio</title>
+        <link rel="stylesheet" href="/assets/css/styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="navbar" class="navbar">
+            <nav>
+                <ul>
+                    <li><a>About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a>Work Experience</a></li>
+                </ul>
+            </nav>
+            <div class="border"></div>
+        </div>
+        <div class="header-container">
+            <div id="hImage">
+                <img width="100%" src="assets/images/titleImage.jpeg" alt="Header Image">
+            </div>
+            <div id="hText">
+                <h2>David Piedra</h2>
+                <h6>Purdue '26, CyberSecurity Student, Full Stack Developer</h6>
+
+                <p>I'm a cyber security student in Purdue's class of 2026 and my passion is in all things Computer Science. My interests lean towards back-end development and ethical hacking and defense, although I do love and excel at front-end and app development.<br>
+                I am currently working towards a degree in Cyber Security</p>
+            </div>
+        </div>>
+        <div class="hovered-2part">
+            <div class="part">
+                <h1>Skills</h1>
+
+                <div class="skill">
+                    <img src="assets/images/golang.png">
+                    <p>With 2 years of experience in Golang,
+                        I have done many projects. Including making a fully
+                        functional social media, SocialFoot, creating a system to
+                        scout other teams performances and analyze them for a robotics team,
+                        the making of this website, and making web APIs for applications I have
+                        also developed.
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="assets/images/Flutter.png">
+                    <p>In 2 years of programming with Flutter, I have had plenty of experience
+                        programming cross platform applications which interact with Web APIs.
+                        The first of which is an app called Gym Brain.
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="assets/images/Java.png">
+                    <p>In 4 years of programming with Java, I have created many applications,
+                        like a Utilities app which had an algebraic calculator with the help of
+                        RegEx, some games, and sorting algorithms.
+                    </p>
+                </div>
+                <div class="skill">
+                    <img src="assets/images/html_js_css.png">
+                    <p>With 5 years of experience in HTML, JavaScript, and CSS,
+                        I have programmed many websites and games. I've created
+                        cool websites such as SocialFoot, contributed to the
+                        TechHOUNDS website, and made many other functional websites
+                        you can find on my github.
+                    </p>
+                </div>
+            </div>
+            <div class="part">
+                <h1>Projects</h1>
+            </div>
+        </div>
+        <script>
+            window.onscroll = function() {checkNavbar();};
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function checkNavbar() {
+                if(window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky");
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+
+            function generateTitle() {
+                let width = $(document).width();
+                let imW = .6 * width;
+                let imH = .67 * imW;
+                $('.hImage img').css({
+                    'width':imW+'px',
+                    'height':imH+'px'
+                });
+            }
+            $(document).ready(function(){
+               generateTitle();
+            });
+
+            $(window).resize(generateTitle);
+        </script>
+    </body>
+</html>
