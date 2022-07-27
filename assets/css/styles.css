@@ -131,3 +131,28 @@ body {
 .part .skill p {
     font-size: 20px;
 }
+
+.part .project {
+    width: 60%;
+    position: relative;
+    margin: 45px auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 20px;
+}
+
+.part .project .summary {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    /*text-shadow: 2px 2px 2px black;*/
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    text-align: center;
+}
+.part .project p:last-child {
+    text-align: right;
+}

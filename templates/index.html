@@ -35,7 +35,7 @@
             </div>
         </div>>
         <div class="hovered-2part">
-            <div class="part">
+            <div id="skills" class="part">
                 <h1>Skills</h1>
 
                 <div class="skill">
@@ -72,8 +72,25 @@
                     </p>
                 </div>
             </div>
-            <div class="part">
+            <div id="projects" class="part">
                 <h1>Projects</h1>
+                <div class="project" style="background-image:url('assets/projects/SocialFoot/Landing.png')">
+                    <div class="summary">
+                        <p>A fully functional social media website complete with
+                        image/video posts, messaging, personal profiles, accounts &
+                        security, and games with high scores.</p>
+                        <p>Learn More</p>
+                    </div>
+                </div>
+                <div class="project" style="background-image:url('assets/projects/GymBrain/GYM.png')">
+                    <div class="summary">
+                        <p>A workout app that helps you create workouts, log
+                            workouts and do research into different aspects
+                            of working out.
+                        </p>
+                        <p>Learn More</p>
+                    </div>
+                </div>
             </div>
         </div>
         <script>
@@ -89,7 +106,7 @@
                 }
             }
 
-            function generateTitle() {
+            function generateView() {
                 let width = $(document).width();
                 let imW = .6 * width;
                 let imH = .67 * imW;
@@ -97,12 +114,45 @@
                     'width':imW+'px',
                     'height':imH+'px'
                 });
+                let projectImageWidth = $('.part .project').width();
+                let projectImageHeight = projectImageWidth;
+                $('.part .project').height(projectImageHeight)
+                
             }
             $(document).ready(function(){
-               generateTitle();
+               generateView();
             });
 
-            $(window).resize(generateTitle);
+            $(window).resize(generateView);
+
+            $('.part .project').hover(
+                //MOUSE ENTER
+                function(){
+                    $(this).stop().animate({
+                        "width":$('.part .project').width() +20,
+                        "height":$('.part .project').height() +20,
+                        "top":"-10px",
+                        "left":"-10px"
+                    },{
+                        duration: 300,
+                        easing: "swing",
+                        queue: true
+                    });
+                },
+                //MOUSE LEAVE
+                function(){
+                    $(this).stop().animate({
+                        "width":$('.part .project').width() -20,
+                        "height":$('.part .project').height() -20,
+                        "top":"10px",
+                        "left":"10px"
+                    },{
+                        duration: 500,
+                        easing: "swing",
+                        queue: true
+                    });
+                }
+            )
         </script>
     </body>
 </html>
