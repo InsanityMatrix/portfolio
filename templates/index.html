@@ -29,7 +29,7 @@
             <div id="hText">
                 <h2>David Piedra</h2>
                 <h6>Purdue '26, CyberSecurity Student, Full Stack Developer</h6>
-
+                <br>
                 <p>I'm a cyber security student in Purdue's class of 2026 and my passion is in all things Computer Science. My interests lean towards back-end development and ethical hacking and defense, although I do love and excel at front-end and app development.<br>
                 I am currently working towards a degree in Cyber Security</p>
             </div>
@@ -97,7 +97,7 @@
             window.onscroll = function() {checkNavbar();};
             var navbar = document.getElementById("navbar");
             var sticky = navbar.offsetTop;
-
+            var partSizes = 0;
             function checkNavbar() {
                 if(window.pageYOffset >= sticky) {
                     navbar.classList.add("sticky");
@@ -110,6 +110,7 @@
                 let width = $(document).width();
                 let imW = .6 * width;
                 let imH = .67 * imW;
+                partSizes = $('.part').width();
                 $('.hImage img').css({
                     'width':imW+'px',
                     'height':imH+'px'
@@ -124,7 +125,92 @@
             });
 
             $(window).resize(generateView);
-
+            $('#projects').hover(
+                //Mouse Enter
+                function(){
+                    $('.skill').css({
+                        "visibility":"hidden"
+                    });
+                    $('#skills').stop().animate({
+                        "width": (partSizes * .5) + "px",
+                    },{
+                        duration: 200,
+                        easing: "swing",
+                        queue: true,
+                    });
+                    $(this).stop().animate({
+                        "width": (partSizes * 1.5) + "px",
+                    },{
+                        duration: 200,
+                        easing: "swing",
+                        queue: true
+                    });
+                    
+                },
+                //MOUSE LEAVE
+                function() {
+                    $(this).stop().animate({
+                        "width": (partSizes) + "px",
+                    },{
+                        duration: 200,
+                        easing: "swing",
+                        queue: true
+                    });
+                    $('#skills').stop().animate({
+                        "width": (partSizes) + "px",
+                    },{
+                        duration: 200,
+                        easing: "swing",
+                        queue: true,
+                    });
+                    $('.skill').css({
+                        "visibility":"visible"
+                    });
+                }
+            );
+            $('#skills').hover(
+                //Mouse Enter
+                function(){
+                    $('.project').css({
+                        "visibility":"hidden"
+                    });
+                    $('#projects').stop().animate({
+                        "width": (partSizes * .5) + "px",
+                    },{
+                        duration: 200,
+                        easing: "swing",
+                        queue: true,
+                    });
+                    $(this).stop().animate({
+                        "width": (partSizes * 1.5) + "px",
+                    },{
+                        duration: 200,
+                        easing: "swing",
+                        queue: true
+                    });
+                    
+                },
+                //MOUSE LEAVE
+                function() {
+                    $(this).stop().animate({
+                        "width": (partSizes) + "px",
+                    },{
+                        duration: 200,
+                        easing: "swing",
+                        queue: true
+                    });
+                    $('#projects').stop().animate({
+                        "width": (partSizes) + "px",
+                    },{
+                        duration: 200,
+                        easing: "swing",
+                        queue: true,
+                    });
+                    $('.project').css({
+                        "visibility":"visible"
+                    });
+                }
+            )
             $('.part .project').hover(
                 //MOUSE ENTER
                 function(){
